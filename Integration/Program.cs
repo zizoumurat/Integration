@@ -25,10 +25,12 @@ public abstract class Program
 
 
         Parallel.Invoke(
-        () => service.SaveItem("Item 2"),
-        () => service.SaveItem("Item 1"),
-        () => service.SaveItem("Item 1") // This should trigger a duplicate message
+                () => service.SaveItem("Item 2"),
+                () => service.SaveItem("Item 1"),
+                () => service.SaveItem("Item 1")
         );
+
+        Thread.Sleep(5000);
         Console.WriteLine("Everything recorded:");
         service.GetAllItems().ForEach(Console.WriteLine);
 
