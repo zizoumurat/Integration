@@ -1,0 +1,11 @@
+1 - Network Problems:
+	In distributed systems, there can be network issues. If communication with a Redis server is lost or delayed while using RedLock, unexpected situations may arise.
+	Therefore, it is important to ensure the reliability of your network connections
+2 - The Redis server may crash.
+	In such a scenario, data loss and the inability to store new data can occur.
+3 - Time Sensitivity:
+	RedLock waits for a certain period to acquire a lock.
+	However, this expected duration does not imply that processes will consistently occur at the same speed
+4 - Server Synchronization:
+	RedLock assumes that time is synchronized among Redis servers.
+	If there are time differences between servers, the reliability of RedLock may decrease.
